@@ -14,4 +14,4 @@ RUN apk update && apk upgrade && \
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-RUN npm install -g cross-env jest jest-puppeteer puppeteer
+RUN yarn global add cross-env jest jest-puppeteer puppeteer
