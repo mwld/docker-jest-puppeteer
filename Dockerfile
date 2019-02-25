@@ -15,5 +15,6 @@ RUN  apt-get update && apt-get install -yq libgconf-2-4 \
 RUN mkdir ~/.npm-global \
     && npm config set prefix '~/.npm-global' \
     && export PATH=~/.npm-global/bin:$PATH
+    && npm install npm -g
 
 RUN npm install -g cross-env jest jest-puppeteer puppeteer
