@@ -12,4 +12,9 @@ RUN  apt-get update && apt-get install -yq libgconf-2-4 \
      && apt-get install -y google-chrome-unstable --no-install-recommends \
      && rm -rf /var/lib/apt/lists/*
 
-RUN sudo npm install -g cross-env jest jest-puppeteer puppeteer --unsafe-perm=true
+RUN mkdir ~/.npm-global \
+    && npm config set prefix '~/.npm-global' \
+    && export PATH=~/.npm-global/bin:$PATH \
+    && source ~/.profile
+
+RUN npm install -g cross-env jest jest-puppeteer puppeteer
