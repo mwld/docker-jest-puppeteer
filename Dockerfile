@@ -1,6 +1,6 @@
 # Based on: https://hub.docker.com/r/buildkite/puppeteer/dockerfile
 
-FROM node:8-slim
+FROM node:10-slim
 
 RUN apt-get update && apt-get install -yq libgconf-2-4 \
     # Install latest chrome dev package, which installs the necessary libs to
