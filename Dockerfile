@@ -12,4 +12,4 @@ RUN apt-get update && apt-get install -yq libgconf-2-4 \
     && apt-get install -y google-chrome-unstable --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-RUN yarn global add cross-env@6.0.3 puppeteer@2.1.1 jest@25.5.4
+RUN yarn global add cross-env@6.0.3 puppeteer@1.2.0 jest@25.5.4 jest-puppeteer@3.0.1 jest-environment-node@22.4.1
