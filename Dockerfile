@@ -1,6 +1,6 @@
-# Based on: https://github.com/buildkite/docker-puppeteer/blob/v3.3.0/Dockerfile
+# Based on: https://hub.docker.com/r/buildkite/puppeteer/dockerfile @5.2.1
 
-FROM node:10.20.1-slim@sha256:05d1d270480b6e99753076b6656bb5a37edb7ca31af20c008568a556bc82d2a8
+FROM node:12.18.3-buster-slim@sha256:dd6aa3ed10af4374b88f8a6624aeee7522772bb08e8dd5e917ff729d1d3c3a4f
 
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates \
@@ -17,6 +17,5 @@ RUN  apt-get update \
      && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh \
      && chmod +x /usr/sbin/wait-for-it.sh
 
-ADD package.json package-lock.json /
-RUN npm install
+RUN yarn global add cross-env@7.0.3 puppeteer@1.20.0 jest@26.6.3 jest-puppeteer@4.4.0 jest-environment-puppeteer@4.4.0 expect-puppeteer@4.4.0
 ENV PATH="${PATH}:/node_modules/.bin"
