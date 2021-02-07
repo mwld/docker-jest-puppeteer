@@ -1,0 +1,18 @@
+{
+  "config": {
+    "unsafe-perm": true
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "dependencies": {
+    "cross-env": "7.0.3",
+    "jest": "26.6.3",
+    "jest-puppeteer": "https://github.com/smooth-code/jest-puppeteer/tarball/master",
+    "puppeteer": "1.20.0"
+  },
+  "resolutions": {
+    "find-process": "1.4.3",
+    "graceful-fs": "4.2.4"
+  }
+}

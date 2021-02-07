@@ -17,5 +17,6 @@ RUN  apt-get update \
      && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh \
      && chmod +x /usr/sbin/wait-for-it.sh
 
-RUN yarn global add cross-env@7.0.3 puppeteer@1.20.0 jest@26.6.3 jest-puppeteer@4.4.0 jest-environment-puppeteer@4.4.0 expect-puppeteer@4.4.0
+ADD package.json package-lock.json /
+RUN npm install --unsafe-perm
 ENV PATH="${PATH}:/node_modules/.bin"
